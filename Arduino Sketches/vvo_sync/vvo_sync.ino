@@ -1,13 +1,13 @@
 void setup() {
   // put your setup code here, to run once:
+  Serial.begin(57600);
   pinMode(13, OUTPUT);
+  digitalWrite(13, LOW);
   delay(5000);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  digitalWrite(13, HIGH);
-  delay(1000);
-  digitalWrite(13, LOW);
-  delay((random(10)+1)*1000);
+  if (Serial.available()){
+    digitalWrite(13, Serial.read()>0);
+  }
 }

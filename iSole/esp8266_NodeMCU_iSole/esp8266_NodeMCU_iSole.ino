@@ -36,7 +36,7 @@ enum PACK_STATUS {
 };
 
 
-const char * SIDE = "L";
+const char * SIDE = "R";
 
 
 uint8_t uart_pack[UART_BUF_LEN];
@@ -289,8 +289,8 @@ void loop() {
           Serial.print(SIDE); Serial.print(" ");
           
 //          Serial.print(pack_start - prev_pack_start); Serial.print(" "); // Sanity check
-
-          Serial.println(pack_start); // current millis
+//          Serial.println(pack_start); // current millis
+          Serial.println(); // current millis
           
           prev_pack_start = pack_start;
         }
